@@ -1,0 +1,31 @@
+{
+  "name": "fis3-deploy-sftp-client",
+  "version": "0.0.1",
+  "description": "It is a deploy files tool from sftp client based on ssh2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zuojj/fis3-deploy-sftp-client.git"
+  },
+  "keywords": [
+    "sftp",
+    "deploy",
+    "fis3",
+    "ssh2"
+  ],
+  "dependencies": {
+    "async": "^0.9.2",
+    "md5-file": "^3.1.1",
+    "object-assign": "~0.3.1",
+    "ssh2": "0.5.4"
+  },
+  "author": "zuojj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zuojj/fis3-deploy-sftp-client/issues"
+  },
+  "homepage": "https://github.com/zuojj/fis3-deploy-sftp-client#readme"
+}
