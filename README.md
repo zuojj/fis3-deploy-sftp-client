@@ -39,9 +39,9 @@ fis.match('*', {
     deploy: fis.plugin('sftp-client', {
         from: ['/resource/static', '/view'],
         to: ['/test2/a', '/test2/b'],
-        host: '10.134.99.182',
+        host: '10.134.xx.xxx',
         username: 'root',
-        password: 'ZJ$011023'
+        password: 'xxx3'
     })
 })
 ```

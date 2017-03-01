@@ -1,6 +1,6 @@
 {
   "name": "fis3-deploy-sftp-client",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "It is a deploy files tool from sftp client based on ssh2",
   "main": "index.js",
   "scripts": {
