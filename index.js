@@ -22,6 +22,7 @@ module.exports = function(options, modifiedFiles, total, callback) {
  * @param {[type]}   total         [description]
  * @param {Function} callback      [description]
  */
+
 function SftpClient(options, modifiedFiles, total, callback) {
     options = assign({
         host: "",
@@ -43,7 +44,9 @@ function SftpClient(options, modifiedFiles, total, callback) {
 
     this.options = options;
     this.modifiedFiles = modifiedFiles;
-    this.cache = {};
+    this.cache = {
+        uploadedFileName: 'sftp-uploaded-cache.json'
+    };
 
     this.uploadedCache();
     this.uploadFiles();
@@ -109,6 +112,12 @@ SftpClient.prototype.uploadFiles = function() {
                 subpath = file.subpath,
                 topath,
                 mkdirArr;
+
+            // filter cache file sftp-uploaded-cache.json
+            if(releasepath.indexOf(cache.uploadedFileName) >= 0) {
+                done();
+                return;
+            }
 
             from.forEach(function(item, index) {
                 if(releasepath.indexOf(item) === 0 && to[index]) {
@@ -274,7 +283,7 @@ SftpClient.prototype.uploadedCache = function() {
     if(!opts.cache) return;
 
     cache.uploaded = {};
-    cacheFilePath = cache.cacheFilePath = path.join(process.cwd(), 'sftp-uploaded-cache.json');
+    cacheFilePath = cache.cacheFilePath = path.join(process.cwd(), cache.uploadedFileName);
 
     try {
         cache.uploaded = require(cacheFilePath) || {};

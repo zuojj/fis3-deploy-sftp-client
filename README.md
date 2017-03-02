@@ -6,8 +6,7 @@
 [npm-badge-url]: https://www.npmjs.com/package/fis3-deploy-sftp-client
 
 
-
-It is a deploy files tool from sftp client based on ssh2
+It is a fis3 deploy files plugin based on ssh2
 
 
 ## Defaults
